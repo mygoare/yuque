@@ -8,10 +8,22 @@
 
     <!-- import CSS -->
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+
+    <style>
+      .wrapper {
+        border-bottom: 2px solid #409eff;
+      }
+      .el-radio-button:first-child .el-radio-button__inner {
+        border-radius: 4px 0 0 0;
+      }
+      .el-radio-button:last-child .el-radio-button__inner {
+        border-radius: 0 4px 0 0;
+      }
+    </style>
 </head>
 <body>
     <div id="app">
-      <div>
+      <div class="wrapper">
           <el-radio-group v-model="radio1" @change="handleRadioChange">
             <el-radio-button v-for="catalog in catalogs" :label="catalog.id" :key="catalog.id">{{catalog.name}}</el-radio-button>
           </el-radio-group>
@@ -33,48 +45,14 @@
         </template>
     </div>
 </body>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.min.js"></script>
+
   <!-- import Vue before Element -->
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <!-- import JavaScript -->
   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
   <script>
-
-    // const weekly = [
-    //     {
-    //         id: ,
-    //         slug: '',
-    //         title: 'UED 周四设计小报#1'
-    //     }
-    // ];
-
-    // const category = [
-    //     {
-    //         id: 0,
-    //         name: '一个设计亮点',
-    //     },
-    //     {
-    //         id: 1,
-    //         name: '一个 App 推荐',
-    //     },
-    //     {
-    //         id: 2,
-    //         name: '一条设计新闻',
-    //     },
-    //     {
-    //         id: 3,
-    //         name: '一篇设计相关文章',
-    //     },
-    // ];
-
-    // articles = [
-    //     {
-    //         title: '',
-    //         link: '',
-    //         weekly_slug: 0,
-    //         catalog: 0,
-    //     }
-    // ]
-
+    const breakPoint = 700
     const articles = [
   {
     "title": "Spotify的音乐分享码",
@@ -822,67 +800,71 @@
   }
 ]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     const weeklies = [ { id: 1811751, title: 'UED 周四设计小报#31', slug: 'lft9gb' },
-  { id: 1790509, title: 'UED 周四设计小报#30', slug: 'yy9r4z' },
-  { id: 1743344, title: 'UED 周四设计小报#29', slug: 'yo86h6' },
-  { id: 1720685, title: 'UED 周四设计小报#28', slug: 'pgl8rl' },
-  { id: 1663176, title: 'UED 周四设计小报#27', slug: 'gnz50p' },
-  { id: 1592922, title: 'UED 周四设计小报#26', slug: 'uug728' },
-  { id: 1542025, title: 'UED 周四设计小报#25', slug: 'ugr6qe' },
-  { id: 1444412, title: 'UED 周四设计小报#24', slug: 'scvfw2' },
-  { id: 1428455, title: 'UED 周四设计小报#23', slug: 'by6157' },
-  { id: 1358698, title: 'UED 周四设计小报#22', slug: 'yzbe5z' },
-  { id: 1329584, title: 'UED 周四设计小报#21', slug: 'gthnb5' },
-  { id: 1319147, title: 'UED 周四设计小报#20', slug: 'nurvmf' },
-  { id: 1292848, title: 'UED 周四设计小报#19', slug: 'go15gf' },
-  { id: 1268628, title: 'UED 周四设计小报#18', slug: 'efruf7' },
-  { id: 1249360, title: 'UED 周四设计小报#17', slug: 'bwokgk' },
-  { id: 1205580, title: 'UED 周四设计小报#16', slug: 'lq999o' },
-  { id: 1184534, title: 'UED 周四设计小报#15', slug: 'pn3hox' },
-  { id: 1160999, title: 'UED 周四设计小报#14', slug: 'an45kh' },
-  { id: 1131765, title: 'UED 周四设计小报#13', slug: 'zzpiet' },
-  { id: 1118367, title: 'UED 周四设计小报#12', slug: 'su87rg' },
-  { id: 1095652, title: 'UED 周四设计小报#11', slug: 'zmpq22' },
-  { id: 1080526, title: 'UED 周四设计小报#10', slug: 'qw437f' },
-  { id: 1059277, title: 'UED 周四设计小报#9', slug: 'giw5sq' },
-  { id: 1041141, title: 'UED 周四设计小报#8', slug: 'll6nzc' },
-  { id: 1020407, title: 'UED 周四设计小报#7', slug: 'kamcb1' },
-  { id: 998564, title: 'UED 周四设计小报#6', slug: 'owa0hn' },
-  { id: 979017, title: 'UED 周四设计小报#5', slug: 'yf0byg' },
-  { id: 964511, title: 'UED 周四设计小报#4', slug: 'glxf8w' },
-  { id: 943978, title: 'UED 周四设计小报#3', slug: 'bexw5y' },
-  { id: 935570, title: 'UED 周四设计小报#2', slug: 'flb02q' },
-  { id: 919231, title: 'UED 周四设计小报#1', slug: 'hfvgf7' } ]
-    const catalogs = [
+    { id: 1790509, title: 'UED 周四设计小报#30', slug: 'yy9r4z' },
+    { id: 1743344, title: 'UED 周四设计小报#29', slug: 'yo86h6' },
+    { id: 1720685, title: 'UED 周四设计小报#28', slug: 'pgl8rl' },
+    { id: 1663176, title: 'UED 周四设计小报#27', slug: 'gnz50p' },
+    { id: 1592922, title: 'UED 周四设计小报#26', slug: 'uug728' },
+    { id: 1542025, title: 'UED 周四设计小报#25', slug: 'ugr6qe' },
+    { id: 1444412, title: 'UED 周四设计小报#24', slug: 'scvfw2' },
+    { id: 1428455, title: 'UED 周四设计小报#23', slug: 'by6157' },
+    { id: 1358698, title: 'UED 周四设计小报#22', slug: 'yzbe5z' },
+    { id: 1329584, title: 'UED 周四设计小报#21', slug: 'gthnb5' },
+    { id: 1319147, title: 'UED 周四设计小报#20', slug: 'nurvmf' },
+    { id: 1292848, title: 'UED 周四设计小报#19', slug: 'go15gf' },
+    { id: 1268628, title: 'UED 周四设计小报#18', slug: 'efruf7' },
+    { id: 1249360, title: 'UED 周四设计小报#17', slug: 'bwokgk' },
+    { id: 1205580, title: 'UED 周四设计小报#16', slug: 'lq999o' },
+    { id: 1184534, title: 'UED 周四设计小报#15', slug: 'pn3hox' },
+    { id: 1160999, title: 'UED 周四设计小报#14', slug: 'an45kh' },
+    { id: 1131765, title: 'UED 周四设计小报#13', slug: 'zzpiet' },
+    { id: 1118367, title: 'UED 周四设计小报#12', slug: 'su87rg' },
+    { id: 1095652, title: 'UED 周四设计小报#11', slug: 'zmpq22' },
+    { id: 1080526, title: 'UED 周四设计小报#10', slug: 'qw437f' },
+    { id: 1059277, title: 'UED 周四设计小报#9', slug: 'giw5sq' },
+    { id: 1041141, title: 'UED 周四设计小报#8', slug: 'll6nzc' },
+    { id: 1020407, title: 'UED 周四设计小报#7', slug: 'kamcb1' },
+    { id: 998564, title: 'UED 周四设计小报#6', slug: 'owa0hn' },
+    { id: 979017, title: 'UED 周四设计小报#5', slug: 'yf0byg' },
+    { id: 964511, title: 'UED 周四设计小报#4', slug: 'glxf8w' },
+    { id: 943978, title: 'UED 周四设计小报#3', slug: 'bexw5y' },
+    { id: 935570, title: 'UED 周四设计小报#2', slug: 'flb02q' },
+    { id: 919231, title: 'UED 周四设计小报#1', slug: 'hfvgf7' } ]
+    const miniCatalogs = [
       {
         id: 0,
-        name: '一个设计亮点',
+        name: '💡',
       },
       {
         id: 1,
-        name: '一个 App 推荐',
+        name: '📱',
       },
       {
         id: 2,
-        name: '一条设计新闻',
+        name: '📰',
       },
       {
         id: 3,
-        name: '一篇设计相关文章',
+        name: '📖',
+      },
+    ]
+    const catalogs = [
+      {
+        id: 0,
+        name: '💡 一个设计亮点',
+      },
+      {
+        id: 1,
+        name: '📱 一个 App 推荐',
+      },
+      {
+        id: 2,
+        name: '📰 一条设计新闻',
+      },
+      {
+        id: 3,
+        name: '📖 一篇设计相关文章',
       },
     ]
     const catalogIDs = [0, 1, 2, 3]
@@ -898,10 +880,35 @@
 
           articles,
 
-          radio1: '',
+          radio1: '0',
+
+          screenW: document.body.clientWidth,
         };
       },
+      created() {
+        window.addEventListener("resize", _.throttle(this.onResize, 500))
+      },
+      destroyed() {
+        window.removeEventListener("resize", _.throttle(this.onResize, 500))
+      },
+      mounted() {
+        this.articles = articles.filter(article => this.radio1 == article.catalog )
+
+        this.onResize()
+      },
+      watch: {
+        screenW: function(val) {
+          if (val > breakPoint) {
+            this.catalogs = catalogs
+          } else {
+            this.catalogs = miniCatalogs
+          }
+        }
+      },
       methods: {
+        onResize() {
+          this.screenW = document.body.clientWidth
+        },
         handleRadioChange(value) {
           console.log(value)
 
