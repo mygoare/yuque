@@ -40,7 +40,7 @@
         
         <template>
           <p v-for="article, i in articles">
-            <el-link type="primary" target="_blank" :href="article.link">{{articles.length - i}} {{article.title}}</el-link>
+            <el-link type="primary" target="_blank" :href="article.link">{{articles.length - i}} : {{article.title}}</el-link>
           </p>
         </template>
     </div>
@@ -54,6 +54,30 @@
   <script>
     const breakPoint = 700
     const articles = [
+  {
+    "title": "一加手机的「搬家」动画",
+    "link": "https://www.yuque.com/wanyanshaoxue/qx05nt/io5ilw#pHm3j",
+    "weekly_slug": "io5ilw",
+    "catalog": 0
+  },
+  {
+    "title": "拾取身边的色彩-色采",
+    "link": "https://www.yuque.com/wanyanshaoxue/qx05nt/io5ilw#2iRLU",
+    "weekly_slug": "io5ilw",
+    "catalog": 1
+  },
+  {
+    "title": "为2020东京奥运会参与国设计动漫形象",
+    "link": "https://www.yuque.com/wanyanshaoxue/qx05nt/io5ilw#YMQUH",
+    "weekly_slug": "io5ilw",
+    "catalog": 2
+  },
+  {
+    "title": "《一个全面&诚实的 UX 陈词滥调表| A comprehensive (and honest) list of UX clichés》",
+    "link": "https://www.yuque.com/wanyanshaoxue/qx05nt/io5ilw#eDQnX",
+    "weekly_slug": "io5ilw",
+    "catalog": 3
+  },
   {
     "title": "Spotify的音乐分享码",
     "link": "https://www.yuque.com/wanyanshaoxue/qx05nt/lft9gb#pHm3j",
