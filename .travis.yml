@@ -1,0 +1,25 @@
+language: node_js
+node_js:
+  - "lts/*"
+
+sudo: false
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install -g yarn
+
+script:
+  - yarn crawler
+  - yarn build
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+  local_dir: dist
+  keep_history: true
+  on:
+    branch: master
