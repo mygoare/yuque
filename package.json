@@ -4,17 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "http-server",
+    "start": "http-server ./dist",
+    "crawler": "node crawler.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.conf.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
+    "cross-env": "^5.2.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
   },
   "devDependencies": {
-    "http-server": "^0.11.1"
+    "html-webpack-plugin": "^3.2.0",
+    "http-server": "^0.11.1",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5"
   }
 }
