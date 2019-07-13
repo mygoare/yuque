@@ -12,6 +12,7 @@ install:
   - npm install -g yarn
 
 script:
+  - yarn
   - yarn crawler
   - yarn build
 
