@@ -50,8 +50,9 @@ request({
 
         let article = await grabArticles(uri);
         // todo: articles 的去重
-        articles = articles.concat(article);
-        console.log(articles, article)
+        // 每期更新的第一期在前
+        articles = article.concat(articles);
+        // console.log(articles)
     }
 
     // 返回增量的 articles
