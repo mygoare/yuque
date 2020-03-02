@@ -48,9 +48,10 @@ request({
         // https://www.yuque.com/api/docs/yzbe5z?book_id=168046
         let uri = `https://www.yuque.com/api/docs/${weeklySlug}?book_id=${bookId}`;
 
-        let articles = await grabArticles(uri);
+        let article = await grabArticles(uri);
         // todo: articles 的去重
-        articles.push(articles)
+        articles = articles.concat(article);
+        console.log(articles, article)
     }
 
     // 返回增量的 articles
