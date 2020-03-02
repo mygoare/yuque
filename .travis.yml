@@ -13,6 +13,7 @@ install:
 
 script:
   - yarn
+  - yarn crawler
   - yarn build
 
 deploy:

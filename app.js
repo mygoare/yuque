@@ -1,4 +1,4 @@
-import articles from './articles.json'
+import articles from './data/articles.json'
 
 const breakPoint = 700
 const miniCatalogs = [
@@ -98,4 +98,4 @@ new Vue({
         this.articles = articles.filter(article => value.includes(article.catalog))
     }
     }
-}) 
+})
