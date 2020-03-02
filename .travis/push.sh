@@ -1,5 +1,7 @@
 #!/bin/sh
 
+#https://www.vinaygopinath.me/blog/tech/commit-to-master-branch-on-github-using-travis-ci/
+
 setup_git() {
   git config --global user.email "travis@travis-ci.com"
   git config --global user.name "Travis CI"
@@ -13,7 +15,7 @@ commit_files() {
 }
 
 push_commits() {
-  git remote add travis-build https://${GITHUB_TOKEN}@github.com/mygoare/yuque.git > /dev/null 2>&1
+  git remote add travis-build https://mygoare:${GITHUB_TOKEN}@github.com/mygoare/yuque.git > /dev/null 2>&1
   git push travis-build master --quiet
 }
 

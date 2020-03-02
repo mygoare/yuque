@@ -17,7 +17,7 @@ script:
   - yarn build
 
 after_success:
-  - sh .travis/push.sh
+  - if [ "$TRAVIS_EVENT_TYPE" = "cron" ]; then sh .travis/push.sh; else echo "Not cron. Skipping push to GitHub"; fi
 
 deploy:
   provider: pages
