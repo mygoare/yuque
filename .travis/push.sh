@@ -6,7 +6,7 @@ setup_git() {
 }
 
 commit_files() {
-  git add . data/*.json
+  git add data/*.json
   git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
 }
 

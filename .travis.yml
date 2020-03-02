@@ -17,7 +17,7 @@ script:
   - yarn build
 
 after_success:
-  - ./travis/push.sh
+  - .travis/push.sh
 
 deploy:
   provider: pages
