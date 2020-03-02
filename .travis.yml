@@ -16,6 +16,9 @@ script:
   - yarn crawler
   - yarn build
 
+after_success:
+  - ./travis/push.sh
+
 deploy:
   provider: pages
   skip_cleanup: true
