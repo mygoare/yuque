@@ -4,6 +4,10 @@
 
 每周四为大家推送四个设计相关内容
 
-经爬虫爬取，整理过后，呈现给大家
+[https://mygoare.github.io/yuque/](https://mygoare.github.io/yuque/)
 
-每周四抓取（travis 抓取国内实在太慢了）、push，会自动部署到 gh-pages
+
+### 说明
+
+
+每周四下午大概6点左右会自动增量抓取并webpack打包部署到 gh-pages 分支，托管在 github pages 上
